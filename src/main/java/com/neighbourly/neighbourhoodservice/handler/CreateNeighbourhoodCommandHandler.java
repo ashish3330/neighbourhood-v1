@@ -44,7 +44,6 @@ public class CreateNeighbourhoodCommandHandler implements CommandHandler<CreateN
 
             neighborhood = neighborhoodRepository.save(neighborhood);
 
-            // Automatically add the creator to the neighborhood
             UserNeighbourhood userNeighbourhood = new UserNeighbourhood();
             userNeighbourhood.setUserId(userId);
             userNeighbourhood.setNeighbourhoodId(neighborhood.getNeighbourhoodId());

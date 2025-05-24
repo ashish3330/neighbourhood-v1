@@ -11,6 +11,6 @@ import java.util.Optional;
 public interface UserNeighbourhoodRepository extends JpaRepository<UserNeighbourhood, Long> {
     Optional<UserNeighbourhood> findByUserIdAndNeighbourhoodId(Long userId, Long neighborhoodId);
 
-    @Query("SELECT un.neighborhoodId FROM UserNeighbourhood un WHERE un.userId = :userId")
+    @Query("SELECT un.neighbourhoodId FROM UserNeighbourhood un WHERE un.userId = :userId")
     List<Long> findNeighbourhoodIdsByUserId(Long userId);
 }
