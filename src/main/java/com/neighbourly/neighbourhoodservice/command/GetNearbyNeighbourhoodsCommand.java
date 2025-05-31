@@ -2,9 +2,11 @@ package com.neighbourly.neighbourhoodservice.command;// Command: GetNearbyNeighb
 
 import com.neighbourly.commonservice.dispatcher.Command;
 import com.neighbourly.neighbourhoodservice.dto.NeighbourhoodResponseDTO;
+import lombok.Getter;
 
 import java.util.List;
 
+@Getter
 public class GetNearbyNeighbourhoodsCommand extends Command<List<NeighbourhoodResponseDTO>> {
     private final Long userId;
     private final Double latitude;
@@ -18,8 +20,4 @@ public class GetNearbyNeighbourhoodsCommand extends Command<List<NeighbourhoodRe
         this.radiusKm = radiusKm;
     }
 
-    public Long getUserId() { return userId; }
-    public Double getLatitude() { return latitude; }
-    public Double getLongitude() { return longitude; }
-    public double getRadiusKm() { return radiusKm; }
 }

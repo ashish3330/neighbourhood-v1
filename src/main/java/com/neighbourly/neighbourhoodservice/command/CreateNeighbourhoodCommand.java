@@ -4,7 +4,9 @@ import com.neighbourly.commonservice.dispatcher.Command;
 import com.neighbourly.neighbourhoodservice.dto.NeighbourhoodRequestDTO;
 import com.neighbourly.neighbourhoodservice.dto.NeighbourhoodResponseDTO;
 import com.neighbourly.neighbourhoodservice.dto.NeighbourhoodRequestDTO;
+import lombok.Getter;
 
+@Getter
 public class CreateNeighbourhoodCommand extends Command<NeighbourhoodResponseDTO> {
     private final Long userId;
     private final NeighbourhoodRequestDTO requestDTO;
@@ -14,6 +16,4 @@ public class CreateNeighbourhoodCommand extends Command<NeighbourhoodResponseDTO
         this.requestDTO = requestDTO;
     }
 
-    public Long getUserId() { return userId; }
-    public NeighbourhoodRequestDTO getRequestDTO() { return requestDTO; }
 }

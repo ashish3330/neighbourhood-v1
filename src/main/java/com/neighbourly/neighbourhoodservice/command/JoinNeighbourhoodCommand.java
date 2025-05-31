@@ -1,9 +1,12 @@
 package com.neighbourly.neighbourhoodservice.command;
 
 import com.neighbourly.commonservice.dispatcher.Command;
+import lombok.Getter;
 
 public class JoinNeighbourhoodCommand extends Command<Void> {
+    @Getter
     private final Long userId;
+    @Getter
     private final Long neighborhoodId;
 
     public JoinNeighbourhoodCommand(Long userId, Long neighborhoodId) {
@@ -11,6 +14,4 @@ public class JoinNeighbourhoodCommand extends Command<Void> {
         this.neighborhoodId = neighborhoodId;
     }
 
-    public Long getUserId() { return userId; }
-    public Long getNeighbourhoodId() { return neighborhoodId; }
 }
