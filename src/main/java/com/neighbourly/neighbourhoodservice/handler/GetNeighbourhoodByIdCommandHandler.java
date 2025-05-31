@@ -36,6 +36,8 @@ public class GetNeighbourhoodByIdCommandHandler implements CommandHandler<GetNei
         NeighbourhoodResponseDTO response = new NeighbourhoodResponseDTO();
         response.setNeighbourhoodId(neighbourhood.getNeighbourhoodId());
         response.setName(neighbourhood.getName());
+        response.setLatitude(neighbourhood.getLatitude());
+        response.setLongitude(neighbourhood.getLongitude());
         response.setDescription(neighbourhood.getDescription());
         response.setLocation(neighbourhood.getLocation());
         response.setCreatedAt(neighbourhood.getCreatedAt());

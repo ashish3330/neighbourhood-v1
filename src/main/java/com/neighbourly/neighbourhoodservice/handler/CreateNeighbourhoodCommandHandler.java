@@ -41,6 +41,8 @@ public class CreateNeighbourhoodCommandHandler implements CommandHandler<CreateN
             neighborhood.setName(dto.getName());
             neighborhood.setDescription(dto.getDescription());
             neighborhood.setLocation(dto.getLocation());
+            neighborhood.setLatitude(dto.getLatitude());
+            neighborhood.setLongitude(dto.getLongitude());
 
             neighborhood = neighborhoodRepository.save(neighborhood);
 
@@ -61,6 +63,8 @@ public class CreateNeighbourhoodCommandHandler implements CommandHandler<CreateN
         response.setName(neighborhood.getName());
         response.setDescription(neighborhood.getDescription());
         response.setLocation(neighborhood.getLocation());
+        response.setLatitude(neighborhood.getLatitude());
+        response.setLongitude(neighborhood.getLongitude());
         response.setCreatedAt(neighborhood.getCreatedAt());
         return response;
     }

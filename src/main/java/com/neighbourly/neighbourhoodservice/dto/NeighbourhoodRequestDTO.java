@@ -1,5 +1,6 @@
 package com.neighbourly.neighbourhoodservice.dto;// DTO: NeighbourhoodRequestDTO.java
 
+import com.fasterxml.jackson.annotation.JsonProperty;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotNull;
 
@@ -13,9 +14,13 @@ public class NeighbourhoodRequestDTO {
     private String location;
 
     @NotNull(message = "Latitude is mandatory")
+    @JsonProperty("latitude")
+
     private Double latitude;
 
     @NotNull(message = "Longitude is mandatory")
+    @JsonProperty("longitude")
+
     private Double longitude;
 
     // Getters and Setters

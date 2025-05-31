@@ -46,6 +46,8 @@ public class GetUserNeighbourhoodsCommandHandler implements CommandHandler<GetUs
         response.setName(neighbourhood.getName());
         response.setDescription(neighbourhood.getDescription());
         response.setLocation(neighbourhood.getLocation());
+        response.setLatitude(neighbourhood.getLatitude());
+        response.setLongitude(neighbourhood.getLongitude());
         response.setCreatedAt(neighbourhood.getCreatedAt());
         return response;
     }
