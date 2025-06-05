@@ -1,7 +1,5 @@
 package com.neighbourly.neighbourhoodservice.security;
 
-import com.neighbourly.neighbourhoodservice.security.CustomPrincipal;
-import com.neighbourly.neighbourhoodservice.security.SecurityConstants;
 import com.neighbourly.neighbourhoodservice.service.JwtService;
 import jakarta.servlet.FilterChain;
 import jakarta.servlet.ServletException;

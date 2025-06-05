@@ -1,4 +1,4 @@
-package com.neighbourly.neighbourhoodservice.security;
+package com.neighbourly.neighbourhoodservice.util;
 
 import com.neighbourly.neighbourhoodservice.security.CustomPrincipal;
 import org.slf4j.Logger;

@@ -12,7 +12,7 @@ import com.neighbourly.neighbourhoodservice.repository.UserNeighbourhoodReposito
 import org.springframework.stereotype.Component;
 
 @Component
-public class JoinNeighbourhoodCommandHandler implements CommandHandler<JoinNeighbourhoodCommand, Void> {
+public class JoinNeighbourhoodCommandHandler implements CommandHandler<JoinNeighbourhoodCommand, String> {
 
     private final NeighbourhoodRepository neighborhoodRepository;
     private final UserNeighbourhoodRepository userNeighbourhoodRepository;
@@ -24,7 +24,7 @@ public class JoinNeighbourhoodCommandHandler implements CommandHandler<JoinNeigh
     }
 
     @Override
-    public Either<String, Void> handle(JoinNeighbourhoodCommand command) {
+    public Either<String, String> handle(JoinNeighbourhoodCommand command) {
         try {
             Long userId = command.getUserId();
             Long neighborhoodId = command.getNeighbourhoodId();
@@ -46,8 +46,7 @@ public class JoinNeighbourhoodCommandHandler implements CommandHandler<JoinNeigh
             userNeighbourhood.setNeighbourhoodId(neighborhoodId);
             userNeighbourhoodRepository.save(userNeighbourhood);
 
-            return Either.right(null);
-        } catch (NeighbourhoodException e) {
+            return Either.right("User successfully joined the neighborhood");        } catch (NeighbourhoodException e) {
             return Either.left(e.getMessage());
         } catch (Exception e) {
             return Either.left("Failed to join neighborhood: " + e.getMessage());

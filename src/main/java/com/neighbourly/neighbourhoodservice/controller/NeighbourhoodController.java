@@ -3,7 +3,7 @@ package com.neighbourly.neighbourhoodservice.controller;// Controller: Neighbour
 import com.neighbourly.commonservice.errorhandling.Either;
 import com.neighbourly.neighbourhoodservice.dto.NeighbourhoodRequestDTO;
 import com.neighbourly.neighbourhoodservice.dto.NeighbourhoodResponseDTO;
-import com.neighbourly.neighbourhoodservice.security.SecurityUtils;
+import com.neighbourly.neighbourhoodservice.util.SecurityUtils;
 import com.neighbourly.neighbourhoodservice.service.NeighbourhoodService;
 import com.neighbourly.neighbourhoodservice.util.ControllerUtil;
 import org.springframework.http.ResponseEntity;
@@ -34,7 +34,7 @@ public class NeighbourhoodController {
 
     @PostMapping("/{id}/join")
     public ResponseEntity<?> joinNeighbourhood(Long neighborhoodId) {
-        Either<String, Void> result = neighborhoodService.joinNeighbourhood(securityUtils.getCurrentUserId(), neighborhoodId);
+        Either<String, String> result = neighborhoodService.joinNeighbourhood(securityUtils.getCurrentUserId(), neighborhoodId);
         return controllerUtils.toResponseEntity(result);
     }
 

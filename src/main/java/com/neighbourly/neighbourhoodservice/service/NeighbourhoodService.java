@@ -23,7 +23,7 @@ import java.util.List;
         return syncDispatcher.dispatch(new CreateNeighbourhoodCommand(userId, requestDTO));
     }
 
-    public Either<String, Void> joinNeighbourhood(Long userId, Long neighborhoodId) {
+    public Either<String, String> joinNeighbourhood(Long userId, Long neighborhoodId) {
         return syncDispatcher.dispatch(new JoinNeighbourhoodCommand(userId, neighborhoodId));
     }
 
